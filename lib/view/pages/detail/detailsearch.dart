@@ -23,7 +23,7 @@ class _detailSearchPageState extends State<detailSearchPage> {
     super.initState();
     if (widget.choose == 1) {
       fetchSearch();
-    } else  {
+    } else {
       fetchDetail();
     }
   }

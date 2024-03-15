@@ -24,7 +24,7 @@ class _categoriesPageState extends State<categoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body : tags == null ? Center(child: CircularProgressIndicator()) : ListView.builder(
+      body : tags == null ? const Center(child: CircularProgressIndicator()) : ListView.builder(
         itemCount: tags.length,
         itemBuilder: (context, index) {
           return ListTile(

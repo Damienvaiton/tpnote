@@ -21,10 +21,10 @@ class DataViewModel {
     return response;
   }
 
-    Future<DetailModel> fetchSearchData(String categories) async {
-      APIDataSource apiDataSource = APIDataSource();
-      var response = await apiDataSource.getSearchGifsWithCategorie(categories);
-      return response;
-    }
+  Future<DetailModel> fetchSearchData(String categories) async {
+    APIDataSource apiDataSource = APIDataSource();
+    print("le categories est " + categories);
+    var response = await apiDataSource.getSearchGifsWithCategorie(categories);
+    return response;
   }
-
+}

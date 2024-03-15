@@ -23,7 +23,8 @@ class APIDataSource {
   }
 
   Future<DetailModel> getDetailGifs(String id) async {
-    final response = await http.get(Uri.parse("${APIBAseUrl}/v2/search?key=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc&client_key=my_test_app&q=$id"));
+    final response = await http.get(Uri.parse(
+        "${APIBAseUrl}/v2/search?key=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc&client_key=my_test_app&q=$id"));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return DetailModel.fromJson(data);
@@ -33,7 +34,8 @@ class APIDataSource {
   }
 
   Future<CategorieModel> getCategories() async {
-    final response = await http.get(Uri.parse("${APIBAseUrl}/v2/categories?key=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"));
+    final response = await http.get(Uri.parse(
+        "${APIBAseUrl}/v2/categories?key=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return CategorieModel.fromJson(data);
@@ -43,7 +45,10 @@ class APIDataSource {
   }
 
   Future<DetailModel> getSearchGifsWithCategorie(String categories) async {
-    final response = await http.get(Uri.parse("${APIBAseUrl} + v2/search?key=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc&q=$categories&locale=en&component=categories&contentfilter=high&client_key=my_test_app"));
+    print(
+    final response = await http.get(Uri.parse(
+        "${APIBAseUrl}/v2/search?key=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc&locale=en&component=categories&contentfilter=high&client_key=my_test_app&q=$categories"));
+    print("la response body est " + response.body);
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return DetailModel.fromJson(data);
