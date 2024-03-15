@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tpnote/view/pages/categories/cartegoriesPage.dart';
-import 'package:tpnote/view/pages/detail/detailPage.dart';
 import 'package:tpnote/view/pages/home/homePage.dart';
 
 

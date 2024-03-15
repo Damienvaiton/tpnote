@@ -10,7 +10,7 @@
             "type": "dart",
             "toolArgs": [
                 "--dart-define",
-                "MY_VAR=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
+                "APIKEY=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
             ]
         },
         {
@@ -20,7 +20,7 @@
             "flutterMode": "profile",
             "toolArgs": [
                 "--dart-define",
-                "MY_VAR=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
+                "APIKEY=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
             ]
         },
         {
@@ -30,7 +30,7 @@
             "flutterMode": "release",
             "toolArgs": [
                 "--dart-define",
-                "MY_VAR=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
+                "APIKEY=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
             ]
         }
     ]

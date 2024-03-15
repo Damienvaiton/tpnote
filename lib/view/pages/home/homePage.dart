@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tpnote/view/pages/detail/detailPage.dart';
 import 'package:tpnote/view/pages/detail/detailsearch.dart';
 import 'package:tpnote/viewmodel/DataVM.dart';
 
@@ -37,7 +36,6 @@ class _homePageState extends State<homePage> {
           : ListView.builder(
               itemCount: list.length,
               itemBuilder: (context, index) {
-                //return une la liste dans un joli design
                 return ListTile(
                     title: Card(
                   elevation: 2.0,
