@@ -41,10 +41,11 @@ class _homePageState extends State<homePage> {
                 return ListTile(
                     title: Card(
                   elevation: 2.0,
-                  margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 16.0),
                   child: ListTile(
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 16.0),
                     title: Text(
                       list[index],
                       style: const TextStyle(
@@ -55,12 +56,14 @@ class _homePageState extends State<homePage> {
                     trailing: const Icon(Icons.arrow_forward),
                     onTap: () {
                       var id3 = list[index];
-                       Navigator.push(
-                         context,
-                         MaterialPageRoute(
-                            builder: (context) => detailSearchPage(id: id3,)
-                         ),
-                       );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => detailSearchPage(
+                                  id: id3,
+                                  choose: 0,
+                                )),
+                      );
                     },
                   ),
                 ));

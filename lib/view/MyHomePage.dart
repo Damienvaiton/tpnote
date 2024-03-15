@@ -24,7 +24,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: [
         const homePage(),
-        const detailPage(),
         const categoriesPage()
       ][selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -34,10 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home, color: Colors.black),
             label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list, color: Colors.black),
-            label: 'Detail',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.category, color: Colors.black),

@@ -1,3 +1,4 @@
+import 'package:tpnote/model/CategorieModel.dart';
 import 'package:tpnote/model/dartModel.dart';
 import 'package:tpnote/model/networks/networks.dart';
 
@@ -13,4 +14,17 @@ class DataViewModel {
     var response = await apiDataSource.getDetailGifs(id);
     return response;
   }
-}
+
+  Future<CategorieModel> fetchCategorieData() async {
+    APIDataSource apiDataSource = APIDataSource();
+    var response = await apiDataSource.getCategories();
+    return response;
+  }
+
+    Future<DetailModel> fetchSearchData(String categories) async {
+      APIDataSource apiDataSource = APIDataSource();
+      var response = await apiDataSource.getSearchGifsWithCategorie(categories);
+      return response;
+    }
+  }
+
