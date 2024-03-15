@@ -1,5 +1,5 @@
-import 'package:tpnote/model/CategorieModel.dart';
-import 'package:tpnote/model/dartModel.dart';
+import 'package:tpnote/model/categorie_model.dart';
+import 'package:tpnote/model/dart_model.dart';
 import 'package:tpnote/model/networks/networks.dart';
 
 class DataViewModel {
@@ -23,7 +23,6 @@ class DataViewModel {
 
   Future<DetailModel> fetchSearchData(String categories) async {
     APIDataSource apiDataSource = APIDataSource();
-    print("le categories est " + categories);
     var response = await apiDataSource.getSearchGifsWithCategorie(categories);
     return response;
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tpnote/view/pages/categories/cartegoriesPage.dart';
 import 'package:tpnote/view/pages/home/homePage.dart';
+import 'pages/categories/cartegoriesPage.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: [
         const homePage(),
-        const categoriesPage()
+        const CategoriesPage()
       ][selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,

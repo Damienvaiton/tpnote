@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
-import 'package:tpnote/model/CategorieModel.dart';
+import 'package:tpnote/model/categorie_model.dart';
 import 'dart:convert';
-import 'package:tpnote/model/dartModel.dart';
+import 'package:tpnote/model/dart_model.dart';
 
 const APIBAseUrl = "https://tenor.googleapis.com";
 const APIKEY = String.fromEnvironment('APIKEY');
@@ -46,7 +46,6 @@ class APIDataSource {
   Future<DetailModel> getSearchGifsWithCategorie(String categories) async {
     final response = await http.get(Uri.parse(
         "$APIBAseUrl/v2/search?key=$APIKEY&locale=en&component=categories&contentfilter=high&client_key=my_test_app&q=$categories"));
-    print("la response body est " + response.body);
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return DetailModel.fromJson(data);

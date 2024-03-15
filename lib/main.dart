@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tpnote/view/MyHomePage.dart';
+import 'package:tpnote/view/my_home_page.dart';
 
 void main() {
   runApp(const MyApp());

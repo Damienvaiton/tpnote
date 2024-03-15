@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:tpnote/model/dartModel.dart';
+import 'package:tpnote/model/dart_model.dart';
 import 'package:tpnote/viewmodel/DataVM.dart';
 
 class detailSearchPage extends StatefulWidget {

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:tpnote/model/CategorieModel.dart';
+import 'package:tpnote/model/categorie_model.dart';
 import 'package:tpnote/view/pages/detail/detailsearch.dart';
 import 'package:tpnote/viewmodel/DataVM.dart';
 
-class categoriesPage extends StatefulWidget {
-  const categoriesPage({super.key});
+class CategoriesPage extends StatefulWidget {
+  const CategoriesPage({super.key});
 
   @override
-  State<categoriesPage> createState() => _categoriesPageState();
+  State<CategoriesPage> createState() => _CategoriesPageState();
 }
 
-class _categoriesPageState extends State<categoriesPage> {
+class _CategoriesPageState extends State<CategoriesPage> {
   CategorieModel categorieModel = CategorieModel();
   List<Tags> tags = [];
   DataViewModel dataViewModel = DataViewModel();
@@ -24,6 +24,7 @@ class _categoriesPageState extends State<categoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // ignore: unnecessary_null_comparison
       body : tags == null ? const Center(child: CircularProgressIndicator()) : ListView.builder(
         itemCount: tags.length,
         itemBuilder: (context, index) {

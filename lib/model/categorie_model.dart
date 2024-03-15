@@ -9,16 +9,16 @@ class CategorieModel {
     if (json['tags'] != null) {
       tags = <Tags>[];
       json['tags'].forEach((v) {
-        tags!.add(new Tags.fromJson(v));
+        tags!.add(Tags.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['locale'] = this.locale;
-    if (this.tags != null) {
-      data['tags'] = this.tags!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['locale'] = locale;
+    if (tags != null) {
+      data['tags'] = tags!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -41,10 +41,10 @@ class Tags {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['searchterm'] = this.searchterm;
-    data['path'] = this.path;
-    data['image'] = this.image;
-    data['name'] = this.name;
+    data['searchterm'] = searchterm;
+    data['path'] = path;
+    data['image'] = image;
+    data['name'] = name;
     return data;
   }
 }
