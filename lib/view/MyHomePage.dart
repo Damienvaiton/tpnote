@@ -17,7 +17,6 @@ class _MyHomePageState extends State<MyHomePage> {
     void setSelectedIndex(int index) {
       setState(() {
         selectedIndex = index;
-        print(selectedIndex);
       });
     }
   @override
