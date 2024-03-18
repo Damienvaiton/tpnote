@@ -10,7 +10,7 @@
             "type": "dart",
             "toolArgs": [
                 "--dart-define",
-                "APIKEY=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
+                "APIKEY=Y a pas le key"
             ]
         },
         {
@@ -20,7 +20,7 @@
             "flutterMode": "profile",
             "toolArgs": [
                 "--dart-define",
-                "APIKEY=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
+                "APIKEY=Y a pas le key"
             ]
         },
         {
@@ -30,7 +30,7 @@
             "flutterMode": "release",
             "toolArgs": [
                 "--dart-define",
-                "APIKEY=AIzaSyD3U57ytKdya6GPPGspReBnXNdjobSQLJc"
+                "APIKEY=Y a pas le key"
             ]
         }
     ]
