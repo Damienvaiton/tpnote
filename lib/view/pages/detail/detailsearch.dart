@@ -16,11 +16,14 @@ class detailSearchPage extends StatefulWidget {
 
 class _detailSearchPageState extends State<detailSearchPage> {
   DetailModel detailModel = DetailModel();
+  ScrollController _scrollController = ScrollController();
+  List<Results> results = [];
   DataViewModel dataViewModel = DataViewModel();
 
   @override
   void initState() {
     super.initState();
+    _scrollController.addListener(_scrollListener);
     if (widget.choose == 1) {
       fetchSearch();
     } else {
@@ -35,11 +38,28 @@ class _detailSearchPageState extends State<detailSearchPage> {
     });
   }
 
+  void fetchNextDetail() async {
+    var data =
+        await dataViewModel.fetchNextDetailData(widget.id, detailModel.next!);
+    setState(() {
+      detailModel.next = data.next;
+      detailModel.results!.addAll(data.results!);
+    });
+  }
+
   void fetchSearch() async {
     var data = await dataViewModel.fetchSearchData(widget.id);
     setState(() {
       detailModel = data;
     });
+  }
+
+  void _scrollListener() {
+    if (_scrollController.offset >=
+            _scrollController.position.maxScrollExtent &&
+        !_scrollController.position.outOfRange) {
+      fetchNextDetail();
+    }
   }
 
   @override
@@ -49,6 +69,7 @@ class _detailSearchPageState extends State<detailSearchPage> {
         title: const Text('Detail Page'),
       ),
       body: ListView.builder(
+        controller: _scrollController,
         itemCount: detailModel.results!.length,
         itemBuilder: (BuildContext context, int index) {
           final result = detailModel.results![index];

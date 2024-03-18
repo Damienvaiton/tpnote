@@ -15,6 +15,12 @@ class DataViewModel {
     return response;
   }
 
+  Future<DetailModel> fetchNextDetailData(String id, String nextid) async {
+    APIDataSource apiDataSource = APIDataSource();
+    var response = await apiDataSource.getNextDetailGifs(id, nextid);
+    return response;
+  }
+
   Future<CategorieModel> fetchCategorieData() async {
     APIDataSource apiDataSource = APIDataSource();
     var response = await apiDataSource.getCategories();

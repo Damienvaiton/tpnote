@@ -8,7 +8,8 @@ const APIKEY = String.fromEnvironment('APIKEY');
 
 class APIDataSource {
   Future<List<String>> getTrendingGifs() async {
-    final response = await http.get(Uri.parse("$APIBAseUrl/v2/trending_terms?key=$APIKEY&client_key=my_test_app"));
+    final response = await http.get(Uri.parse(
+        "$APIBAseUrl/v2/trending_terms?key=$APIKEY&client_key=my_test_app"));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       List<String> trendingGifs = [];
@@ -17,13 +18,25 @@ class APIDataSource {
       }
       return trendingGifs;
     } else {
-      throw Exception('Failed to load trending gifs');
+      throw Exception(
+          'Failed to load trending gifs with the code: ${response.statusCode} and the message: ${response.body}');
     }
   }
 
   Future<DetailModel> getDetailGifs(String id) async {
     final response = await http.get(Uri.parse(
-        "$APIBAseUrl/v2/search?key=$APIKEY&client_key=my_test_app&q=$id"));
+        "$APIBAseUrl/v2/search?key=$APIKEY&client_key=my_test_app&q=$id&limit=3"));
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      return DetailModel.fromJson(data);
+    } else {
+      throw Exception('Failed to load trending gifs');
+    }
+  }
+
+  Future<DetailModel> getNextDetailGifs(String id, String nextid) async {
+    final response = await http.get(Uri.parse(
+        "$APIBAseUrl/v2/search?key=$APIKEY&client_key=my_test_app&q=$id&limit=3&pos=$nextid"));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return DetailModel.fromJson(data);
@@ -33,8 +46,8 @@ class APIDataSource {
   }
 
   Future<CategorieModel> getCategories() async {
-    final response = await http.get(Uri.parse(
-        "$APIBAseUrl/v2/categories?key=$APIKEY"));
+    final response =
+        await http.get(Uri.parse("$APIBAseUrl/v2/categories?key=$APIKEY"));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return CategorieModel.fromJson(data);
