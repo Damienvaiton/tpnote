@@ -25,7 +25,7 @@ class APIDataSource {
 
   Future<DetailModel> getDetailGifs(String id) async {
     final response = await http.get(Uri.parse(
-        "$APIBAseUrl/v2/search?key=$APIKEY&client_key=my_test_app&q=$id&limit=3"));
+        "$APIBAseUrl/v2/search?key=$APIKEY&client_key=my_test_app&q=$id&limit=20"));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return DetailModel.fromJson(data);
@@ -36,7 +36,7 @@ class APIDataSource {
 
   Future<DetailModel> getNextDetailGifs(String id, String nextid) async {
     final response = await http.get(Uri.parse(
-        "$APIBAseUrl/v2/search?key=$APIKEY&client_key=my_test_app&q=$id&limit=3&pos=$nextid"));
+        "$APIBAseUrl/v2/search?key=$APIKEY&client_key=my_test_app&q=$id&limit=20&pos=$nextid"));
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return DetailModel.fromJson(data);

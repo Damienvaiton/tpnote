@@ -16,7 +16,7 @@ class detailSearchPage extends StatefulWidget {
 
 class _detailSearchPageState extends State<detailSearchPage> {
   DetailModel detailModel = DetailModel();
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   List<Results> results = [];
   DataViewModel dataViewModel = DataViewModel();
 
@@ -79,7 +79,11 @@ class _detailSearchPageState extends State<detailSearchPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.network("${result.itemurl}.gif"),
+                  SizedBox(
+                    height: 200,
+                    width: 200,
+                    child: Image.network("${result.itemurl}.gif"),
+                  ),
                 ],
               ),
             ),
